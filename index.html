@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrega IV - Visual Final</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Projeto Final - Entrega IV</h1>
+  </header>
+
+  <main>
+    <section class="gallery">
+      <img src="images/imagem1.jpg" alt="Imagem ilustrativa 1">
+      <img src="images/imagem2.jpg" alt="Imagem ilustrativa 2">
+      <img src="images/imagem3.jpg" alt="Imagem ilustrativa 3">
+    </section>
+
+    <div style="text-align:center; margin-top: 1rem;">
+      <button class="tema-btn" aria-label="Alternar tema">Tema</button>
+      <button class="contraste-btn" aria-label="Alternar alto contraste">Alto Contraste</button>
+    </div>
+
+    <form id="contatoForm">
+      <h2>Contato</h2>
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required>
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <div id="alerta" class="mensagem"></div>
+
+  <audio id="somSucesso" src="sounds/sucesso.mp3" preload="auto"></audio>
+  <audio id="somErro" src="sounds/erro.mp3" preload="auto"></audio>
+
+  <footer>
+    <p>© 2025 - Projeto Acadêmico de Interatividade</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

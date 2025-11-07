@@ -1,0 +1,105 @@
+:root {
+  --primary-dark: #191970;
+  --primary-accent: #C71585;
+  --hover-accent: #8B008B;
+  --text-light: #ffffff;
+  --bg-light: #f7f7f7;
+  --bg-dark: #121212;
+  --transition: 0.3s ease;
+  --radius: 10px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background: var(--bg-light);
+  color: #222;
+  transition: background var(--transition), color var(--transition);
+  display: flex; flex-direction: column; min-height: 100vh;
+}
+header {
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary-accent));
+  color: var(--text-light);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 1.8rem;
+}
+footer {
+  background: linear-gradient(90deg, var(--primary-accent), var(--primary-dark));
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+}
+button.tema-btn,
+button.contraste-btn {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+  margin: 0.5rem;
+}
+button.tema-btn:hover,
+button.contraste-btn:hover {
+  background-color: var(--hover-accent);
+  transform: scale(1.05);
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem auto;
+  width: 90%;
+  max-width: 1100px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffffdd;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+input, textarea {
+  width: 100%; padding: 0.8rem; margin: 0.5rem 0;
+  border: 1px solid #ccc; border-radius: var(--radius);
+}
+body.dark-mode { background: var(--bg-dark); color: var(--text-light); }
+body.dark-mode form { background: #1e1e1e; }
+body.dark-mode input, body.dark-mode textarea {
+  background: #2b2b2b; color: #fff; border-color: #444;
+}
+.mensagem {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+}
+.mensagem.mostrar {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.mensagem.sucesso { background-color: #28a745; }
+.mensagem.erro { background-color: #dc3545; }
